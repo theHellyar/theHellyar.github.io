@@ -1,0 +1,74 @@
+/*-------------------------Global Styles-------------------------*/
+.row {
+    padding: 40px 0px 40px 0px;
+}
+.colA {
+/*    padding: 0px 0px 0px 0px;*/
+}
+.colB {
+    margin-top:0px;
+}
+.colB p, h1 {
+    margin-left: 20px;
+}
+#ErrorMessage {
+    margin: 100px 0px 200px 0px;
+    height: 100%;
+    font-size: 40px;
+}
+/*-------------------------Row Styles-------------------------*/
+#bgContainerA {
+    background: #53774c;
+    color: #fff;
+}
+#row1 {
+    margin-top:50px;
+}
+#bgContainerB {
+    background: #373839;
+    color: #fff;
+}
+#bgContainerC {
+    background: #4c5d77;
+    color: #fff;
+}
+#bgContainerD {
+    background: #373839;
+    color: #fff;
+}
+#bgContainerE {
+    background: #4c5d77;
+    color: #fff;
+}
+#bgContainerF {
+    background: #373839;
+    color: #fff;
+}
+#bgContainerG {
+    background: #53774c;
+    color: #fff;
+}
+code {
+    background: #373839;
+    color: #fff;
+    font-family: monospace
+}
+/*-------------------------Media Query 768px-------------------------*/
+
+@media (min-width: 768px) {
+    .colA {
+        padding: 0px 0px 0px 0px;
+    }
+    .colB {
+        padding: 20px 0px 0px 0px;
+    }
+}
+/*-------------------------Media Query 992px-------------------------*/
+@media (min-width: 992px) {
+    .colA {
+        padding: 40px 0px 40px 0px;
+    }
+    .colB {
+        padding: 0px 0px 10px 0px;
+    }
+}

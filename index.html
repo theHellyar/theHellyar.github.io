@@ -1,1 +1,260 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Brad Hellyar - Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <!-- Bootstrap minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <!-- custom sheet style -->
+        <link rel="stylesheet" href="css/projectStyle.css">
+        <link rel="stylesheet" href="css/navbarCustom.css">
+        <link rel="stylesheet" href="css/svgStyle.css">
+        <!--iOS and Favicons-->
+        <link rel="icon" type="image/png" href="assets/HexBCHlogo.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/apple-icon.png" />
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    </head>
+    <body>
+        <!--Floating Navigation Bar-->
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navcollapse">
+                        <span class="sr-only">toggle</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="svgNavLogoHex" class="navbar-brand" href="#top">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navcollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a id="projects" href="index.html" class="icons text-center dropdown-toggle" data-toggle="dropdown"> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#RenoTracksContainer">Reno Tracks App</a></li>
+                                <li><a href="#imaContainer">IMA Respionsive Website</a></li>
+                                <li><a href="#ConverterContainer">Coordiante Conversion Tool</a></li>
+                                <li><a href="#CodetasticContainer">Codetastic</a></li>
+                                <li><a href="#EducationContainer">Conceptual Examples</a></li>
+                            </ul>
+                        </li>
+                        <li><a id="linkedIn" class="icons text-center" target="_blank" href="http://www.linkedin.com/in/bradhellyar"></a></li>
+                        <li><a id="twitter" class="icons text-center" target="_blank" href="https://twitter.com/GeoHellyar"></a></li>
+                        <li><a id="facebook" class="icons text-center" target="_blank" href="https://www.facebook.com/bradhellyar"></a></li>
+                        <li><a id="bookmark" class="icons text-center" href="/bookmarks.html"></a></li>
+                        <li><a id="contactMe" class="icons text-center" href="#ContactContainer"></a></li>
+                    </ul>
+                    <a id="svgResponsive" href="http://www.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/" target="_blank">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!--Section 1-->
+        <div id="bgContainerA">
+            <div class="container" id="top">
+                <div id="row1" class="row">
+                    <div id="svgBCHHex" class="column1 col-xs-12 col-sm-12 col-md-2 text-center">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </div>
+                    <article class="column2 col-xs-12 col-sm-12 col-md-10">
+                        <h1>Brad C. Hellyar</h1>
+                        <p>I am a full stack web and application developer that enjoys developing in many different environments. I tend to pull slightly more toward front-end or UI development, but I have the skills and passion for the complete development process. Currently, I am on a vector graphics kick as I find it makes the design and development process much simpler and makes for a more dynamic and responsive front end. In my studies and free time I have focused on web/application development and database design and implementation, so graphics aren't just my only trick when developing a new project. I try to keep up with current technologies and ideals to be able to deliver a complete package that can showcase overall goal of the project. Thank you for checking out my portfolio and please <a href="#ContactContainer">reach out</a> to me if you have any questions or feedback.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <!--RenoTracks-->
+        <div id="RenoTracksContainer">
+            <div class="container">
+                <div id="row2" class="row">
+                    <div id="svgMobileHex" class="column1 col-xs-12 col-sm-12 col-md-2 text-center">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </div>
+                    <article class="column2 col-xs-12 col-sm-6 col-md-6">
+                        <h2 class="text-center">Reno Tracks iOS App</h2>
+                        <p>During the <a target="_blank" href="http://hack4reno.com/">2013 Hack4Reno</a> hack-a-thon I joined a team as iOS developer to take an outdated open source project named Cycle Tracks and modify it to work for Reno, Nevada. Using <a target="_blank" href="https://github.com">GitHub</a> version control I cloned the repo to implement the project for Reno and more importantly updating the base code for iOS7, as iOS7 had a strong adoption rate I felt it would be crucial to support it. During the process I gained a love for finding bugs and more so for fixing them. I also did all the graphics/branding for app and webpage.</p>
+                        <p>After placing 2nd in the 24 hour coding event, out team got support from a local biking advocacy group to help pay for the server hosting costs for the back-end and costs of deploying the app to the app store. I continued to clean up the code and graphics for the application while soliciting beta testers for the app. I used <a target="_blank" href="http://www.testflightapp.com">testflight</a> to manage the beta testing and once the all the known bugs were worked out I successfully submitted it to the app store.  
+                            Our, Nevada Bicycling Coalition, efforts to bring the app and ideal of improved cycling infrastructure have proven success and still continue to this day.</p>
+                        <span class="btn btn-RenoTracks"><a href="https://itunes.apple.com/us/app/renotracks/id769446317" target="_blank">Reno Tracks App</a></span>
+                        <span class="btn btn-RenoTracks"><a href="http://renotracks.nevadabike.org/" target="_blank">Reno Tracks Website</a></span>
+                    </article>
+                    <div class="column3 col-xs-12 col-sm-6 col-md-4 text-center">
+                        <div>
+                            <a href="http://renotracks.nevadabike.org/" target="_blank">
+                                <img id="RenoTracksScreen" alt="RenoTracks Screenshot" src="projects/apps/RenoTracks/renoTracks_web.PNG">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--IMA-->
+        <div id="imaContainer">
+            <div class="container">
+                <div id="row3" class="row">
+                    <div id="svgGlobeHex" class="column1 col-xs-12 col-sm-12 col-md-2 text-center">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </div>
+                    <article class="column2 col-xs-12 col-sm-6 col-md-6">
+                        <h2 class="text-center">IMA Website</h2>
+                        <p>As a volunteer webmaster I have been able to bring the local chapter of The Association of Accountants and Financial Professionals in Business (IMA) up-to-date and in compliance with organizational standards. Using the <a href="http://getbootstrap.com">Bootstrap</a> framework and custom media queries I designed this site to be fully responsive adapting and repositioning content for best fit on the displayed screen. I also used the <a href="http://jquery.com">jQuery</a> library to add some interactions as well as the mobile menu bar page-slide effect. Additionally, I used jQuery to dynamically load page contents in an effort to reduce bandwidth and decrease page load time. The board of directors has been very appreciative of my volunteer service as they have taken it upon themselves enter the website into the organizations recognition of web presence competition. </p>
+                        <p>Designing and coding this website I learned how to better adapt content for different screen sizes, as well as when to use a content management system (CMS). With this site I implemented a secondary site for testing purposes, built on the <a href="https://drupal.org">Drupal</a> CMS framework. And while Drupal has many of the tools and utilities needed to manage large sites, the IMA board had not needed the features it offered. So, I opted to keep a more custom look and feel by ended the Drupal testing site and continuing to hand coding each element on each page learning valuable skills along the way.</p>
+                        <span class="btn btn-IMA"><a href="http://imareno.org/" target="_blank">IMA Website</a></span>
+                    </article>
+                    <div class="column3 col-xs-12 col-sm-6 col-md-4 text-center">
+                        <div>
+                            <a href="http://imareno.org/" target="_blank">
+                                <img id="imaScreenshot" alt="IMA Screenshot" src="projects/website/IMA/IMAHomePage.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Coordinate Converter-->
+        <div id="ConverterContainer">
+            <div class="container">
+                <div id="row4" class="row">
+                    <div id="svgGPSHex" class="column1 col-xs-12 col-sm-12 col-md-2 text-center">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </div>
+                    <article class="column2 col-xs-12 col-sm-6 col-md-6">
+                        <h2 class="text-center">Coordinate Conversion Tool</h2>
+                        <p>This project came from a need at my full time job. Currently, many mining companies use a custom coordinate system (mine grid) for the mine site, making conversion of well hole, drill holes, or any pertinent point, line, or polygon impossible by most handheld GPS units. Being a geographic information systems (GIS) consultant and developer I took it upon myself to create a web-based tool that can convert common coordinate systems from and to the custom mine grid.</p>
+                        <p>This tool was created in a few hours with JavaScript, jQuery, and Bootstrap with the intention of using the web app in low bandwidth situations. Plans to improve the site are underway and consists of further support for custom mine grids, allowing for offline use, and packaging the source code into a dedicated mobile app. I also have plans to improve the overall UI and further validate user input.</p>
+                        <span class="btn btn-CordTool"><a href="projects/conversion/Hycroft.htm" target="_blank">Conversion Tool</a></span>
+                    </article>
+                    <div class="column3 col-xs-12 col-sm-6 col-md-4 text-center">
+                        <div>
+                            <a href="projects/conversion/Hycroft.htm" target="_blank">
+                                <img id="ConverterScreen" alt="Tool Screenshot" src="projects/conversion/img/ScreenShot.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Codetastic-->
+        <div id="CodetasticContainer">
+            <div class="container">
+                <div id="row5" class="row">
+                    <div id="svgCodeHex" class="column1 col-xs-12 col-sm-12 col-md-2 text-center">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </div>
+                    <article class="column2 col-xs-12 col-sm-6 col-md-6">
+                        <h2 class="text-center">Codetastic</h2>
+                        <p>Codetastic is a project in which you can write code and see the live results on the page. The site uses a JavaScript library called <a target="_blank" href="http://codemirror.net">CodeMirror</a> to achieve its results, and currently supports HTML, CSS, and JavaScript. As this is a personal project and is driven solely by my free time, it has been a work in progress and has many goals to further improve it. One of those goals was to make the app into a Windows 8 app, which can currently be downloaded for free from the <a target="_blank" href="http://apps.microsoft.com/windows/en-us/app/60d5bc78-cc27-40f1-8a23-e585c5281c73">Windows app store</a>. While the app is somewhat simple I have learned many new Windows 8 technologies and have an improved version nearly ready for submission, implementing live view, using more metro charms, and saving user settings locally.</p>
+                        <span class="btn btn-Codetastic"><a href="projects/codetastic/codetasticWeb.html" target="_blank">get your code on</a></span>
+                        <span class="btn btn-Codetastic"><a href="http://apps.microsoft.com/windows/en-us/app/60d5bc78-cc27-40f1-8a23-e585c5281c73" target="_blank">view in app store</a></span>
+                    </article>
+                    <div class="column3 col-xs-12 col-sm-6 col-md-4 text-center">
+                        <div>
+                            <a href="projects/codetastic/codetasticWeb.html" target="_blank">
+                                <img id="CodetasticScreen" alt="Codetastic Screenshot" src="projects/codetastic/img/ScreenShot_web.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Education Mockups-->
+        <div id="EducationContainer">
+            <div class="container">
+                <div id="row6" class="row">
+                    <div id="svgCapHex" class="column1 col-xs-12 col-sm-12 col-md-2 text-center">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </div>
+                    <article class="column2 col-xs-12 col-sm-6 col-md-6">
+                        <h2 class="text-center">Conceptual Examples</h2>
+                        <p>While the next two examples are some of my very early work it shows some simple animations that are rendered in all browsers both desktop and mobile. These simple animations can be added to any full fledge website to create dynamic content capable of grabbing a visitor's attention.</p>
+                        <p>These two examples came about as a result of a simple assignment in which I went above the expected results, which hopefully shows my early love to learn and develop. The following projects where built with a tool called <a target="_blank" href="http://tumult.com/hype/">Hype</a> in which I used a timeline approach to create HTML5 animations. Hype is an amazing tool, which can be used for several scenarios, animating embedded content into a web page, advertisement creation, mobile web app creation and much more. The technology behind the tool, HTML and JavaScript allows a single code base to target of all browsers both desktop and mobile. As these projects are mockups much of the functionality is missing.</p>
+
+                        <p>Personal Autonomous Shuttle (PAS) was a report I did in which I researched self-driving cars, like those Google has implemented, to create a business plan to utilize autonomous vehicles to transport people in the same vicinity to and from their destination, much like <a target="_blank" href="https://www.uber.com">Uber</a> but without a driver. At the time the idea was inventive but this simple concept demo shows animations that can be utilized on any web site or mobile app.</p>
+                        <span class="btn btn-PAS"><a href="projects/class_project/PAS/PAS.html" target="_blank">P.A.S.</a></span> 
+                        <br/><br/>
+                        <p>Something Cool Company project is a very basic conceptual webpage (pre responsive design) showing simple animations. The requirements for the web page were to have an application that could be filled out and a page where, if fully implemented, a representative could approve and deny the applications submitted via the form.  All requirements were met on time and high marks were received for the project.</p>
+                        <span class="btn btn-SCC"><a href="projects/class_project/Class_Site_BradHellyar/Concept_Site.html" target="_blank">Concept Site</a></span>
+                    </article>
+                    <div class="column3 col-xs-12 col-sm-6 col-md-4 text-center">
+                        <div>
+                            <a href="projects/class_project/PAS/PAS.html" target="_blank">
+                                <img id="PASScreen" alt="PAS Screenshot" src="projects/class_project/PAS/ScreenShot.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Contact Form-->
+        <div id="ContactContainer">
+            <div class="container">
+                <div id="row7" class="row">
+                    <div id="svgPersonHex" class="column1 col-xs-12 col-sm-12 col-md-2 text-center">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </div>
+                    <div class="column2 col-xs-12 col-sm-12 col-md-8">
+                        <h2 class="text-center">Contact Me</h2>
+                        <form class="validate-form" enctype='multipart/form-data' action=process.php method=post>
+                            <div>
+                                <input type=text name='name' required placeholder="name">
+                            </div>
+                            <br/>
+                            <div>
+                                <input type=email name='email' required placeholder="email">
+                            </div>
+                            <br/>
+                            <div>
+                                <input type=text name='subject' placeholder="subject">
+                            </div>
+                            <br/>
+                            <div>
+                                <textarea name='message' required placeholder="message"></textarea>
+                            </div>
+                            <br/>
+                            <input id="buttonSend" class="btn btn-success" type='submit' value='Send'> <input id="buttonClear" class="btn btn-default" type=reset value='Clear'>
+                        </form>        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Sticky Footer-->
+        <footer>
+            <div id="FooterContainer">
+                <div class="container">
+                    <div class="column1 col-xs-12 text-center">
+                        This site and the graphics were built from scratch by me with a mobile first responsive approach. Resize your browser to experience.<br/>
+                        <br/>
+                        <small>Copyright &copy; 2014 <a href="#top">Brad C. Hellyar</a></small>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Scripts-->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/svgAnimate.js"></script>
+        <script src="js/svgInject.js"></script>
+        <script src="js/webkitFormValidationFix.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-50203719-1', 'hellyar.me');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

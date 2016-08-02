@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Brad Hellyar - Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <!-- Bootstrap minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <!-- custom sheet style -->
+        <link rel="stylesheet" href="css/projectStyle.css">
+        <link rel="stylesheet" href="css/navbarCustom.css">
+        <link rel="stylesheet" href="css/svgStyle.css">
+        <link rel="stylesheet" href="css/readsStyle.css">
+        <!--iOS and Favicons-->
+        <link rel="icon" type="image/png" href="assets/HexBCHlogo.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/apple-icon.png" />
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    </head>
+
+    <body>
+         <!--Floating Navigation Bar-->
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navcollapse">
+                        <span class="sr-only">toggle</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="svgNavLogoHex" class="navbar-brand" href="#top">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navcollapse">
+                    <ul class="nav navbar-nav">
+                        <li><a id="portfolio" class="icons text-center" href="index.html"></a></li>
+                        <li><a id="linkedIn" class="icons text-center" target="_blank" href="http://www.linkedin.com/in/bradhellyar"></a></li>
+                        <li><a id="twitter" class="icons text-center" target="_blank" href="https://twitter.com/GeoHellyar"></a></li>
+                        <li><a id="facebook" class="icons text-center" target="_blank" href="https://www.facebook.com/bradhellyar"></a></li>
+                        <li><a id="bookmark" class="icons text-center" target="_top" href="#"></a></li>
+                        <li><a id="contactMe" class="icons text-center" href="#ContactContainer"></a></li>
+                    </ul>
+                    <a id="svgResponsive" href="http://www.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/" target="_blank">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!--Section 1-->
+        <div id="bgContainerA">
+            <div class="container" id="top">
+                <div id="row1" class="row">
+                    <div id="svgBCHHex" class="column1 col-xs-12 col-sm-12 col-md-2 text-center">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </div>
+                    <article class="column2 col-xs-12 col-sm-12 col-md-10">
+                        <h1>Bookmarks from my Pocket</h1>
+                        <p>
+                            This was my attempt to share articles I have read or bookmarked in my <a target="_blank" href="getpocket.com">pocket</a> account. Currently there isn't a built in method for sharing content in pocket, but felt that if prospective clients/organizations could see the type of content I consume they could see my interests and better understand who I am.</p>
+                        <p>
+                            To achieve the desired results below I used a service called <a target="_blank" href="ifttt.com">If This Then That</a> (IFTTT). Where I set a 'recipe' or rule that tells the service to append a user specified block of text to a plain text file in dropbox. In this case I used HTML elements in my block of text to style my content for the web. So each time I favorite or tag a bookmark in my Pocket account the service triggers this recipe, appending an HTML formatted block of text to a specified plain text file in Dropbox. At that point I retrieve the Dropbox text file fromm this web page with a small Ajax request and load it into the DOM.
+                        </p>
+                        <div id="tips">
+                            <p>
+                                <u>Tip 1:</u> In order to get the Dropbox file you must change the URL for your shared file by changing the 'www' to 'dl' then you will have a raw url to the file available.
+                                <br/>
+                                <u>Tip 2:</u> The IFTTT service loads an 'Image Not Found' image for bookmarks without an image. To clean this up I used the below jQuery script to replace that image with one or more of my own.
+                            </p>
+                            <pre>
+&lt;script&gt; 
+    $(function () {
+        $('img').each(function(){
+        var x = $(this).attr('src'); 
+        if (x == "http://ift.tt/eA8V8J")
+        { 
+            $(this).attr('src', "assets/SoccerBall.svg");
+        } 
+        });
+    });
+&lt;/script&gt;
+                            </pre>
+                            <!--IFTTT embeded recipe-->
+                            <div id="iftttRecipe">
+                                <a href="https://ifttt.com/view_embed_recipe/200845-pocket-tag-dropbox-html-text-file-for-web" target="_blank" class="embed_recipe embed_recipe-l_43" id="embed_recipe-200845"><img src= 'https://ifttt.com/recipe_embed_img/200845' alt="IFTTT Recipe: Pocket Tag > Dropbox HTML text file for Web connects pocket to dropbox" style="max-width:100%;"/></a>
+                                <script async type="text/javascript" src="//ifttt.com/assets/embed_recipe.js"></script>
+                            </div>
+                        </div>
+                        <div class="pull-right float">
+                            <button id="showTips" class="btn btn-primary btn-xs" > <span id="btnShowGlyph" class="glyphicon glyphicon-chevron-right"></span>
+                            </button>
+                        </div>
+                    </article>
+
+
+                </div>
+            </div>
+        </div>
+        <!--RenoTracks-->
+        <div id="goodreads">
+            <div class="container">
+                <div id="row2" class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <!--                        <h2 class="text-center">Great Reads, Tools, &amp; Resources</h2>-->
+                        <div id="resourcesBits">
+                            <!--Load content with jQuery Ajax .load() Dropbox plain text that contains IFTTT.com content from GetPocket.com favorite bookmarks-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Contact Form-->
+        <div id="ContactContainer">
+            <div class="container">
+                <div id="row7" class="row">
+                    <div id="svgPersonHex" class="column1 col-xs-12 col-sm-12 col-md-2 text-center">
+                        <!--SVG code injected here. Reference svgInject.js-->
+                    </div>
+                    <div class="column2 col-xs-12 col-sm-12 col-md-8">
+                        <h2 class="text-center">Contact Me</h2>
+                        <form class="validate-form" enctype='multipart/form-data' action=process.php method=post>
+                            <div>
+                                <input type=text name='name' required placeholder="name">
+                            </div>
+                            <br/>
+                            <div>
+                                <input type=email name='email' required placeholder="email">
+                            </div>
+                            <br/>
+                            <div>
+                                <input type=text name='subject' placeholder="subject">
+                            </div>
+                            <br/>
+                            <div>
+                                <textarea name='message' required placeholder="message"></textarea>
+                            </div>
+                            <br/>
+                            <input id="buttonSend" class="btn btn-success" type='submit' value='Send'>
+                            <input id="buttonClear" class="btn btn-default" type=reset value='Clear'>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Sticky Footer-->
+        <footer>
+            <div id="FooterContainer">
+                <div class="container">
+                    <div class="column1 col-xs-12 text-center">
+                        This site and the graphics were built from scratch by me with a mobile first responsive approach. Resize your browser to experience.
+                        <br/>
+                        <br/>
+                        <small>Copyright &copy; 2014 <a href="#top">Brad C. Hellyar</a></small>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!--Scripts-->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/svgAnimate.js"></script>
+        <script src="js/svgInject_BM.js"></script>
+        <script src="js/webkitFormValidationFix.js"></script>
+        <script>
+            $('#tips').slideUp(0);
+            $('#showTips').click(function () {
+                $('#tips').slideToggle('slow');
+                $('#btnShowGlyph').toggleClass('glyphicon-chevron-down');
+            });
+            $('#resourcesBits').load("https://dl.dropboxusercontent.com/s/lfhyh8e25tr7v1l/favoritewebarticles.txt?dl=0");
+        </script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-50203719-1', 'hellyar.me');
+            ga('send', 'pageview');
+        </script>
+    </body>
+
+</html>

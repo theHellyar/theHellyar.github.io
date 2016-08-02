@@ -1,0 +1,63 @@
+.navbar {
+    background: #373839;
+    border-radius: 0px;
+    font-weight: 200;
+}
+.icon-bar {
+    background: #fff;
+}
+.icons {
+    width: 50%;
+    height: 50px;
+    float: left;
+}
+.nav #facebook svg{
+    position: relative;
+    top:2px
+}
+.nav #bookmark svg{
+    position: relative;
+    top:1px
+}
+
+.navbar li a:hover {
+    /*    font-weight: 600;*/
+    background-color: #1c1e1f;
+    background-image: none;
+}
+.dropdown-menu, .dropdown-menu li a {
+    background: #373839;
+    color: #fff;
+    font-weight: 200;
+
+}
+.dropdown-menu li a:hover,
+.dropdown-toggle:active, 
+.open .dropdown-toggle {
+    background: #1c1e1f !important;
+    color: #fff !important;
+}
+
+@media (min-width: 768px) {
+    .icons {
+        color: #fff;
+        height: 51px;
+        width: 70px;
+    } 
+    .nav li svg {
+        position: relative;
+        top:-3px
+    }
+    .nav #twitter svg{
+        position: relative;
+        top:-4px
+    }
+    .nav #facebook svg{
+        position: relative;
+        top:-1px
+    }
+    .nav #bookmark svg{
+        position: relative;
+        top:-2px
+    }
+}

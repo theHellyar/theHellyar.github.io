@@ -1,0 +1,349 @@
+/*Cascading Stylesheet by Brad Hellyar in conjunction with Bootstrap 3 */
+
+/*-------------------------Global Styles-------------------------*/
+body {
+    font-weight: 200; 
+}
+.row a, footer a{
+    color: inherit;
+    text-decoration: underline;
+}
+.row {
+    padding: 60px 0px 60px 0px;
+}
+.svgHex { 
+    position: relative;
+    width: 120px;
+    margin-bottom: 0px;
+    max-height: 200px;
+}
+.btn {
+    border-radius: 0px;   
+}
+#BCHLogo {
+    margin-top: -8px   
+}
+#responsiveSVG {
+    margin-top: -2px;
+    fill:rgba(255, 255, 255, 0.13);
+    width: 100%;
+    height: 40px;
+}
+#responsiveLogo {
+    fill:#fff; 
+}
+#responsiveLogo:hover {
+    fill:#030202; 
+}
+
+/*-------------------------Row Styles-------------------------*/
+#bgContainerA {
+    background: #395876;
+    margin-top: 50px;
+    background-image: url("/img/hexes.svg");
+    color: #fff;
+}
+#row1 {
+    margin-top:30px;
+}
+#svgBCHHex {
+    stroke:#d2d6de !important;   
+    stroke-width:0px;
+}
+/*-------------------------RenoTracks Styles-------------------------*/
+/*
+#renoTracks {
+    stroke: #3b8b38 !important;
+    stroke-width:5px;
+}
+*/
+#renoTracks #RT0 {
+    fill:#3b8b38;   
+}
+#renoTracks #RT1 {
+    fill:#fff;   
+}
+#RenoTracksScreen {
+    max-width:300px;
+    width: 100%;
+    margin-top:20px;
+}
+.btn-RenoTracks, .btn-RenoTracks a {
+    background: #3b8b38;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-weight: 200; 
+}
+/*-------------------------IMA Styles-------------------------*/
+#row3 .column1 { 
+    margin-top:0px;  
+}
+#imaContainer {
+    background: #1c456d;
+    color: #e1ebf5;
+}
+#imaScreenshot {
+    max-width:300px;
+    width: 100%;
+    margin-top:20px;
+}
+.btn-IMA, .btn-IMA a {
+    background-color: #e1ebf5;
+    color: #1c456d;
+    text-decoration: none; 
+    font-weight: 200; 
+}
+/*-------------------------Converter Styles-------------------------*/
+#ConverterContainer {
+    background: #9f5b17;   
+    color: #ffe8d2;
+    background-image: url("/img/Topo_Trim_Min.svg");
+    background-position: left;
+    background-origin: content-box;
+}
+#ConverterScreen {
+    max-width:300px;
+    width: 100%;
+    margin-top:20px;
+}
+.btn-CordTool, .btn-CordTool a {
+    background: #ffe8d2;
+    color: #9f5b17;
+    text-decoration: none;
+    font-weight: 200; 
+}
+/*-------------------------Codetastic Styles-------------------------*/
+#CodetasticContainer {
+    background: #191919;  
+    color: #b4b4b4;
+}
+#CodetasticScreen {
+    max-width:300px;
+    width: 100%;
+    margin-top:20px;
+}
+.btn-Codetastic, .btn-Codetastic a {
+    background: #b4b4b4; 
+    color: #191919;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-weight: 200; 
+}
+/*-------------------------Education Styles-------------------------*/
+#EducationContainer {
+    background: #f0f0f0;
+}
+#PASScreen {
+    max-width:300px;
+    width: 100%;
+    margin-top:20px
+}
+.btn-PAS, .btn-PAS a, .btn-SCC, .btn-SCC a{
+    background-color: #000;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 200; 
+}
+/*-------------------------Contact form Styles-------------------------*/
+#ContactContainer {
+    background: #4d644b; 
+    color: #fff;
+    background-image: url("/img/hexes_green.svg");
+}
+#contactform {
+    margin-top: 20px;
+}
+input {
+    background: rgba(160, 186, 159, 0.71);
+    border: none;
+    border-radius: 0px;
+    width: 100%;;
+}
+textarea {
+    width: 100%;
+    min-height: 150px;
+    background: rgba(160, 186, 159, 0.71);
+    border: none;
+    border-radius: 0px;
+}
+#buttonSend {
+    width: 90px;   
+}
+#buttonClear {
+    width: 90px;
+}
+/*-------------------------HTML5 Form Validation-----------------------*/
+::-webkit-input-placeholder { color:rgba(255, 255, 255, 0.5); }
+::-moz-placeholder { color:rgba(255, 255, 255, 0.5); } /* firefox 19+ */
+:-ms-input-placeholder { color:rgba(255, 255, 255, 0.5); } /* ie */
+input:-moz-placeholder { color:rgba(255, 255, 255, 0.5); }
+
+/*---------------HTML5 Form Validation fix for Webkit------------------*/
+.invalid input:required:invalid {
+    background: rgba(190, 76, 84, 0.64);
+}
+.invalid textarea:required:invalid {
+    background: rgba(190, 76, 84, 0.64);
+}
+.invalid input:required:valid {
+    background: rgba(160, 186, 159, 0.71);
+}
+.invalid textarea:required:valid {
+    background: rgba(160, 186, 159, 0.71);
+}
+
+
+/*-------------------------Footer Styles-------------------------*/
+#FooterContainer {
+    background: #373839;
+    color: #6f6f6f;
+    padding: 20px 0px 20px 0px;
+    
+}
+/*-------------------------Media Query 768px-------------------------*/
+@media (min-width: 768px) {
+    .svgHex { 
+        width: 120px;
+        margin-bottom: 20px;
+    }
+    #responsiveSVG {
+        width: 60px;
+        margin-top:6px;
+        position: relative;
+        left:280px;
+        height: 40px;
+    }
+
+    #row7 .column1 {
+        margin-top: 0px;
+    }
+    #row7 .column2 {
+        margin-top: -30px;
+    }
+    input {
+        width: 200px;    
+    }
+}
+/*-------------------------Media Query 992px-------------------------*/
+@media (min-width: 992px) {
+    #responsiveSVG {
+        left:480px;
+    }
+    #row1 .column1 {
+        margin-top: 30px;
+    }
+    #row1 .column2 {
+        margin-top: -10px;
+    }
+    #row2 .column1 {
+       margin-top: 180px;
+    }
+    #row2 .column2 {
+        margin-top: 30px;
+    }
+    #RenoTracksScreen {
+        margin-top:0px;
+    }
+    
+    #row3 .column1 { 
+        margin-top:180px;  
+    }
+    #row3 .column2 { 
+        margin-top:0px;  
+    }
+    #row3 .column3 {
+        margin-top:100px;   
+    }
+    #imaScreenshot {
+        margin-top:0px;
+    }
+    #ConverterContainer {
+/*        background-size: 3500px;*/
+    }
+    #row4 .column1 {
+        margin-top: 130px;
+    }
+    #row4 .column2 {
+        margin-top: -20px;    
+    }
+    #row4 .column3 {
+        margin-top: 10px;    
+    }
+    #ConverterScreen {
+        margin-top:0px;
+    }
+    
+    #row5 .column1 {
+        margin-top: 80px;   
+    }
+    #row5 .column2 {
+        margin-top: -10px;   
+    }
+    
+    #row6 .column1 {
+        margin-top: 300px;   
+    }
+    #PASScreen {
+        margin-top: 150px;    
+    }
+    #row7 .column1 {
+        margin-top: 115px;
+    }
+    #contact1 .column1 {
+        margin-top: 110px;   
+    }
+
+
+}
+/*-------------------------Media Query 1200px-------------------------*/
+@media (min-width: 1200px) {
+    #responsiveSVG {
+        left:680px;
+    }
+    #row1 .column1 {
+        margin-top: 20px;
+    }
+    #row1 .column2 {
+        margin-top: -10px;
+    }
+    #row2 .column1 {
+       margin-top: 190px;
+    }
+    #row2 .column2 {
+        margin-top: 60px;
+    }
+    #row3 .column1 { 
+        margin-top:150px;  
+    }
+    #row3 .column2 { 
+        margin-top:-10px;  
+    }
+    #row3 .column3 {
+        margin-top:55px;   
+    }
+    #row4 .column1 {
+        margin-top: 120px;
+    }
+    #row4 .column2 {
+        margin-top: 20px;    
+    }
+    #row5 .column1 {
+        margin-top: 70px;   
+    }
+    #row5 .column2 {
+        margin-top:-10px;   
+    }
+    #row5 .column3 {
+        margin-top:-10px;   
+    }
+    #row6 .column1 {
+        margin-top: 250px;   
+    }
+    #row7 .column1 {
+        margin-top: 125px;
+    }
+    #PASScreen {
+        margin-top: 90px;    
+    }
+}

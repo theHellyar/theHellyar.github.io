@@ -1,0 +1,15 @@
+.svgHex {
+    fill:#c71313;
+}
+#i0,#i1,#i2,#i3,#i4,#i5 {
+    stroke-width: 1px;
+    stroke: #2a8631;
+}
+/*
+#hexManual path:hover {
+    fill:#c71313;
+    stroke: #000;
+    stroke-width: 2px;
+}
+*/
+

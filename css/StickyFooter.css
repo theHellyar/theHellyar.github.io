@@ -1,0 +1,29 @@
+html, body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+#main {
+    padding-top:150px;
+    font-size: 40px;
+    overflow:auto;
+    padding-bottom:130px; /* this needs to be bigger than footer height*/
+}
+
+footer {
+    position: relative;
+    margin-top: -120px; /* negative value of footer height */
+    clear:both;
+    padding-top:0px;
+} 
+@media (min-width: 992px) {
+    #main {
+        
+    }
+    footer {
+        margin-top:-100px;
+    }
+}
