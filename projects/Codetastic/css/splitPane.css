@@ -1,0 +1,42 @@
+html, body {
+     height: 100%;
+     margin: 0;
+     padding: 0;
+}
+
+#content {
+    position: relative;
+    height: 100%;
+}
+
+#codeInput, #right {
+    float: left;
+    width: 50%;
+    height: 100%; 
+    overflow: auto;
+}
+
+#codeInput {
+    background: #fee;
+}
+#right {
+    background: #efe;
+    z-index: 20;
+}
+
+#divider {
+    position: absolute;
+    width: 5px;
+    margin-left: -5px;
+    top: 0;
+    bottom: 0;
+    background: #c1c1c1;
+    border: 1px outset #bbb;
+    border-top: 0;
+    border-bottom: 0;
+    cursor: col-resize;
+}
+
+html.dragging * {
+    cursor: col-resize !important;
+}

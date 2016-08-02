@@ -1,0 +1,115 @@
+body{
+    overflow-y:scroll;
+}
+
+#content {
+    margin-top:0px;
+}
+
+#content a,li:link {color:rgb(37, 75, 126);}
+#content a:hover {color:rgb(64, 152, 216);text-decoration:none;}
+
+#header{
+    background-image:none;
+    background-color:rgb(37, 75, 126);
+    height:40px;
+    border: solid 1px rgba(255, 255, 255, 0);
+}
+
+#header h1 {
+    margin-top:0px;
+    font-size:30px;
+    text-shadow:none;
+}
+
+#menubutton, .ui-btn .ui-btn-inner {
+    background-image:none;
+    background-color:rgb(37, 75, 126);
+    border-radius: 5px;
+    border:none;
+    text-shadow: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#header a:hover {background-color:rgb(56, 100, 159);}
+
+#menubutton img {
+    margin-bottom:3px;
+}
+
+#IDChevron, #DoChevron, #RemChevron {
+    margin-top:10px;
+    margin-right:10px;
+    margin-left:0px;
+}
+
+#slogan {
+  margin-bottom:30px;
+}
+
+h4 {
+   margin-top:0px;
+}
+
+.quote {
+    margin-left:20px;
+}
+
+.noBottom {
+    margin-bottom:0px;
+}
+
+.unstyled li{
+    margin-left:15px;
+}
+
+.panel-content a{
+    display:block;
+    padding:10px;
+    text-shadow:none;
+    text-decoration:none;
+}
+select {
+    border-radius:2px;
+    width:205px
+
+
+}
+.panel-content a:link {
+    color:rgb(37, 75, 126);
+}
+
+.ui-shadow,
+.ui-btn-up-a,
+.ui-btn-hover-a,
+.ui-btn-down-a,
+.ui-body-b,
+.ui-btn-up-b,
+.ui-btn-hover-b,
+.ui-btn-down-b,
+.ui-bar-c,
+.ui-body-c,
+.ui-btn-up-c,
+.ui-btn-hover-c,
+.ui-btn-down-c,
+.ui-bar-c,
+.ui-body-d,
+.ui-btn-up-d,
+.ui-btn-hover-d,
+.ui-btn-down-d,
+.ui-bar-d,
+.ui-body-e,
+.ui-btn-up-e,
+.ui-btn-hover-e,
+.ui-btn-down-e,
+.ui-bar-e,
+.ui-overlay-shadow,
+.ui-shadow,
+.ui-btn-active,
+.ui-body-a,
+.ui-bar-a {
+        text-shadow: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}

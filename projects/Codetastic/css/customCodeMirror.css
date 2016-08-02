@@ -1,0 +1,16 @@
+        .CodeMirror {
+            border: none;
+            height: 100%;
+            position:fixed;
+            left:0px;
+            top:42px;
+            width:50%;
+            text-shadow:none;
+        }
+        .CodeMirror-scroll {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        iframe {
+            top:42px;
+        }

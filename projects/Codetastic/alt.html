@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<script src="js/bootstrap.min.js"></script>
+<link href="coder.css" rel="stylesheet" type="text/css">
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+<!--
+<script src="js/jquery.mobile-1.3.1.js"></script>
+<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css">
+-->
+    
+<!-- HTML5 shim for IE backwards compatibility -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- Fav and touch icons -->
+  
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icon/apple-144.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icon/apple-114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icon/apple-72.png">
+<link rel="apple-touch-icon-precomposed" href="img/icon/apple-57.png">
+<link rel="shortcut icon" href="img/icon/favicon.ico">
+
+<title>CODER</title>
+</head>
+<body>
+    <div data-role="page" id="things2">
+        <div id="header" data-role="header" data-position="fixed" data-tap-toggle="false" data-fullscreen="true" >
+            <a id="menubutton" href="#menu"><img src="img/glyphicons_158_show_lines.png" alt="menulink"></a>
+            <h1 class="text-center">CODER</h1>
+        </div> 
+        
+        <div>
+            <form>
+                <textarea name="htmlArea" cols=150 rows=6></textarea>
+                <br>
+                <input type="button" value=" view " onclick="preview(this.form)">
+            </form>
+        </div>
+        
+        <div data-role="panel" id="menu" data-theme="b">
+          <div class="panel-content">
+                  <a href="#">Membership</a>
+                  <a href="#">Board Memebers</a>
+                  <a href="#">Employment</a>
+          </div> <!--content wrapper for padding -->
+        </div><!-- /navpanel -->
+</div> <!-- END Page -->
+    <script>
+        function preview(form) {
+            var show = form.htmlArea.value;
+            win = windows.open(", ", 'popup', 'toolbar = no, status = no');
+            win.document.write("" + show + "");
+        };  
+    </script>
+    <script>
+     // When ready...
+    window.addEventListener("load",function() {
+        // Set a timeout...
+        setTimeout(function(){
+            // Hide the address bar!
+            window.scrollTo(0, 1);
+        }, 0);
+    });        
+    </script>
+    
+</body>
+</html>

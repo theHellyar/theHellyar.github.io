@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <!--CDNs, bootstrap, jQuery-->
+<!--
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+-->
+    <link href="css/splitPane.css" rel="stylesheet">
+    
+    <title>Codetastic Rocks!</title>
+        <!-- codemirror -->
+    <script src="lib/codemirror.js"></script>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="mode/javascript/javascript.js"></script>
+    <script src="mode/css/css.js"></script>
+    <script src="mode/htmlmixed/htmlmixed.js"></script>
+    <script src="mode/vbscript/vbscript.js"></script>
+    <script src="mode/xml/xml.js"></script>
+    <script src="addon/closetag.js"></script>
+    <script src="addon/hint/javascript-hint.js"></script>
+    <script src="addon/hint/html-hint.js"></script>
+    <script src="addon/hint/show-hint.js"></script>
+    <script src="addon/hint/xml-hint.js"></script>
+    <link rel="stylesheet" href="addon/hint/show-hint.css">
+    
+    <link rel="stylesheet" href="css/customCodeMirror.css">
+</head>
+<body>
+    <div id="content">
+
+            <div id="codeInput">
+                <textarea id="code" name="code">
+                    <h1>Codetastic Web</h1>
+                    <p>This site is built run and maintained by <a href="mailto:bradhellyar@gmail.com">Brad.</a></p>
+                    <p>With javascript libraries from <a href="http://codemirror.net/">Code Mirror.</a></p>
+                    <p>And a little bit of <a href="http://jquerymobile.com/">jQuery Mobile.</a></p>
+
+                    <h3>Usage...</h3>
+                </textarea>
+            </div>
+
+        <div id="right">
+            <iframe id="preview"></iframe>
+        </div>
+
+    </div>
+    <script src="js/splitPane.js"></script>
+    <script src="js/customCodeMirror.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>CODER</title>
+	<script src="js/js_quicktags.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="coder.css" type="text/css" media="screen">
+    
+    <script src="lib/codemirror.js"></script>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="mode/javascript/javascript.js"></script>
+    <script src="mode/css/css.js"></script>
+    <script src="mode/htmlmixed/htmlmixed.js"></script>
+    <script src="mode/vbscript/vbscript.js"></script>
+    <script src="mode/xml/xml.js"></script>
+<!--    <link rel="stylesheet" href="theme/cobalt.css">-->
+  <link rel="stylesheet" href="theme/neat.css">
+    <link rel="stylesheet" href="theme/elegant.css">
+    <link rel="stylesheet" href="theme/erlang-dark.css">
+    <link rel="stylesheet" href="theme/night.css">
+    <link rel="stylesheet" href="theme/monokai.css">
+    <link rel="stylesheet" href="theme/cobalt.css">
+    <link rel="stylesheet" href="theme/eclipse.css">
+    <link rel="stylesheet" href="theme/rubyblue.css">
+    <link rel="stylesheet" href="theme/lesser-dark.css">
+    <link rel="stylesheet" href="theme/xq-dark.css">
+    <link rel="stylesheet" href="theme/xq-light.css">
+    <link rel="stylesheet" href="theme/ambiance.css">
+    <link rel="stylesheet" href="theme/ambiance-mobile.css">
+    <link rel="stylesheet" href="theme/blackboard.css">
+    <link rel="stylesheet" href="theme/vibrant-ink.css">
+    <link rel="stylesheet" href="theme/solarized.css">
+    <link rel="stylesheet" href="theme/twilight.css">
+    <link rel="stylesheet" href="theme/midnight.css">
+
+  <style type="text/css">
+      .CodeMirror {
+        border: none;
+        height: auto;
+          width:50%;
+      }
+      .CodeMirror-scroll {
+        overflow-y: hidden;
+        overflow-x: auto;
+      }
+    </style>
+   
+  </head>
+  <body id="body">
+
+   <textarea id="code" name="code">
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+       <h1> Red </h1>
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+</textarea>
+ <iframe id=preview></iframe>
+<p id="theme">Select a theme: <select onchange="selectTheme()" id=select>
+    <option value="FFFFFF" selected>default</option>
+    <option value="202020">ambiance</option>
+    <option value="0C1021">blackboard</option>
+    <option value="002240">cobalt</option>
+    <option value="FFFFFF">eclipse</option>
+    <option value="FFFFFF">elegant</option>
+    <option value="002240">erlang-dark</option>
+    <option value="262626">lesser-dark</option>
+    <option value="0F192A">midnight</option>
+    <option value="272822">monokai</option>
+    <option value="FFFFFF">neat</option>
+    <option value="0a001f">night</option>
+    <option value="112435">rubyblue</option>
+    <option value="002b36">solarized dark</option>
+    <option value="fdf6e3">solarized light</option>
+    <option value="141414">twilight</option>
+    <option value="000">vibrant-ink</option>
+    <option value="0a001f">xq-dark</option>
+    <option value="FFFFFF">xq-light</option>
+</select>
+</p>
+    <script>
+    
+      document.bgColor = "#FFFFFF";
+
+      var delay;
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        viewportMargin: Infinity
+      });
+        
+     editor.on("change", function() {
+        clearTimeout(delay);
+        delay = setTimeout(updatePreview, 300);
+      });
+        
+    function updatePreview() {
+        var previewFrame = document.getElementById('preview');
+        var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
+        preview.open();
+        preview.write(editor.getValue());
+        preview.close();
+      }
+      setTimeout(updatePreview, 300);
+        
+      var input = document.getElementById("select");
+      function selectTheme() {
+        var theme = input.options[input.selectedIndex].innerHTML;
+        editor.setOption("theme", theme);
+        
+        var newBG = input.value;
+        document.bgColor = newBG;
+
+      }
+      var choice = document.location.search &&
+                   decodeURIComponent(document.location.search.slice(1));
+      if (choice) {
+        input.value = choice;
+        editor.setOption("theme", choice);
+      }
+      
+          
+        
+        
+    </script>
+
+  </body>
+</html>

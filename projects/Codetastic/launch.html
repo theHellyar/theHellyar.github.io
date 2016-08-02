@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <!--CDNs, bootstrap, jQuery-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+ 
+    <title>Codetastic Rocks!</title>
+    
+    <style>
+        body{
+            background: rgb(224, 231, 237);
+            width:100%;
+        }
+        .hero-unit {
+            background: rgba(185, 188, 190, 0.85);
+        }
+    </style>
+    <script>
+        $('h3').click(function(){
+            $(this).css('color','#3248be');
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="hero-unit">
+            <h1 class="title text-center">&lt;Codetastic&gt;</h1>
+                <p class="text-success text-center">Code on the go</p>
+        </div>
+        <div class="row-fluid">
+            <div class="span4">
+                <h3>Features</h3>
+                <ul>
+                    <li>HTML editing and highlighting</li>
+                    <li>CSS editing and highlighting</li>
+                    <li>Javascript editing and highlighting</li>
+                    <li>Auto complete HTML (Ctrl-space)</li>
+                    <li>Auto end tag</li>
+                    <li>Line Numbering</li>
+                    <li>18 different themes (see settings charm)</li>
+                    <li>Full-screen code editing</li>
+                    <li>Open and save documents from/to computer</li>
+                </ul>
+            </div>
+            <div class="span4">
+                <h3>Roadmap</h3>
+                <ul>
+                    <li>Improved autocomplete, javascript, css</li>
+                    <li>Code folding</li>
+                    <li>...many more (I have to keep some suprises!)</li>
+                </ul>
+            </div>
+            <div class="span4">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:hellyar@outlook.com">Request a feature</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

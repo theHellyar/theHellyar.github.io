@@ -1,0 +1,40 @@
+body{
+    background-color: #5353f5;
+    font-family:arial;
+    margin:20px 40px 0px 180px;
+}
+img {border: 0}
+a:visited {color: #020202}
+font.score {color: #fff; font-size: large}
+font.redscore {color: red; font-size:18px}
+font.blackscore {color: black; font-size:18px}}
+
+.redscore {
+    color:red;
+}
+
+a {z-index:1;}
+
+#redScoreBoard, #blackScoreBoard {
+    width:30px;
+    margin:2px;
+    border: solid 1px black;
+}
+.score {
+    margin-left:13px;
+}
+
+#play {
+    display:block;
+    text-align:center;
+    padding:20px 20px 0px 20px;
+    border: solid 2px #020202;
+    background: #f4e891;
+    color: #020202;
+    margin:0px;
+    position:fixed;
+    top:60%;
+    left:45%;
+    width: 130px;
+    height:40px;
+}

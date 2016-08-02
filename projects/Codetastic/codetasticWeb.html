@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Codetastic</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+        <link href="css/custom.css" rel="stylesheet" type="text/css">
+        <!-- jQuery -->
+        <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+        <link rel="stylesheet" href="css/jquery.mobile-1.3.1.css">
+
+
+        <link rel="stylesheet" href="coder.css" type="text/css">
+        <!-- codemirror -->
+        <script src="lib/codemirror.js"></script>
+        <link rel="stylesheet" href="lib/codemirror.css">
+        <script src="mode/javascript/javascript.js"></script>
+        <script src="mode/css/css.js"></script>
+        <script src="mode/htmlmixed/htmlmixed.js"></script>
+        <script src="mode/vbscript/vbscript.js"></script>
+        <script src="mode/xml/xml.js"></script>
+        <script src="addon/closetag.js"></script>
+        <script src="addon/hint/javascript-hint.js"></script>
+        <script src="addon/hint/html-hint.js"></script>
+        <script src="addon/hint/show-hint.js"></script>
+        <script src="addon/hint/xml-hint.js"></script>
+        <link rel="stylesheet" href="addon/hint/show-hint.css">
+        <!--themes -->
+        <link rel="stylesheet" href="theme/neat.css">
+        <link rel="stylesheet" href="theme/elegant.css">
+        <link rel="stylesheet" href="theme/erlang-dark.css">
+        <link rel="stylesheet" href="theme/night.css">
+        <link rel="stylesheet" href="theme/monokai.css">
+        <link rel="stylesheet" href="theme/cobalt.css">
+        <link rel="stylesheet" href="theme/eclipse.css">
+        <link rel="stylesheet" href="theme/rubyblue.css">
+        <link rel="stylesheet" href="theme/lesser-dark.css">
+        <link rel="stylesheet" href="theme/xq-dark.css">
+        <link rel="stylesheet" href="theme/xq-light.css">
+        <link rel="stylesheet" href="theme/ambiance.css">
+        <link rel="stylesheet" href="theme/ambiance-mobile.css">
+        <link rel="stylesheet" href="theme/blackboard.css">
+        <link rel="stylesheet" href="theme/vibrant-ink.css">
+        <link rel="stylesheet" href="theme/solarized.css">
+        <link rel="stylesheet" href="theme/twilight.css">
+        <link rel="stylesheet" href="theme/midnight.css">
+        <link rel="stylesheet" href="theme/bch.css">
+
+        <link rel="stylesheet" href="css/customCodeMirror.css">
+
+
+        <!-- HTML5 shim for IE backwards compatibility -->
+        <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+        <!-- Fav and touch icons -->
+
+        <!--
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icon/apple-144.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icon/apple-114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icon/apple-72.png">
+<link rel="apple-touch-icon-precomposed" href="img/icon/apple-57.png">
+<link rel="shortcut icon" href="img/icon/favicon.ico">
+-->
+
+    </head>
+    <body>
+        <div data-role="page" id="things2">
+            <div id="header" data-role="header" data-position="fixed" data-tap-toggle="false" data-fullscreen="true" >
+                <a id="menubutton" href="#menu"><img src="img/glyphicons_158_show_lines.png" alt="menulink"></a>
+                <h1 class="text-center">Codetastic Web</h1>
+            </div> 
+            <!-- CONTENT HERE -->
+            <div id="content" data-role="content"> 
+                <div id="codeInput">
+                    <textarea id="code" name="code">
+  <h1>Codetastic Web</h1>
+  <p>This site is built run and maintained by <a href="mailto:bradhellyar@gmail.com">Brad.</a></p>
+  <p>With javascript libraries from <a href="http://codemirror.net/">Code Mirror.</a></p>
+  <p>And a little bit of <a href="http://jquerymobile.com/">jQuery Mobile.</a></p>
+
+
+                    </textarea>
+                </div>
+
+                <iframe id=preview></iframe>
+            </div>
+            <!-- CONTENT HERE END-->
+
+            <div data-role="panel" id="menu" data-theme="b">
+                <div class="panel-content">
+                    <p id="theme"><b>Select a theme:</b> <select data-role="none" onchange="selectTheme()" id=select>
+                        <option value="FFFFFF" selected>default</option>
+                        <option value="202020">ambiance</option>
+                        <option value="202020">ambiance-mobile</option>
+                        <option value="0C1021">blackboard</option>
+                        <option value="202020">bch</option>
+                        <option value="002240">cobalt</option>
+                        <option value="FFFFFF">eclipse</option>
+                        <option value="FFFFFF">elegant</option>
+                        <option value="002240">erlang-dark</option>
+                        <option value="262626">lesser-dark</option>
+                        <option value="0F192A">midnight</option>
+                        <option value="272822">monokai</option>
+                        <option value="FFFFFF">neat</option>
+                        <option value="0a001f">night</option>
+                        <option value="112435">rubyblue</option>
+                        <option value="002b36">solarized dark</option>
+                        <option value="fdf6e3">solarized light</option>
+                        <option value="141414">twilight</option>
+                        <option value="000">vibrant-ink</option>
+                        <option value="0a001f">xq-dark</option>
+                        <option value="FFFFFF">xq-light</option>
+                        </select>
+                    </p>
+                </div><!-- /content wrapper for padding -->
+            </div><!-- /navpanel -->
+        </div>  <!-- END Page -->
+        <script src="js/customCodeMirror.js"></script>
+    </body>
+</html>

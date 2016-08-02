@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.FatherofThree.tictactoe"
+        version   = "1.0.0">
+
+    <name>Tic | Tac | Toe</name>
+
+    <description>
+        A simple but fun Tic Tac Toe game.
+    </description>
+
+    <author href="" email="hellyar@outlook.com">
+        FatherofThree
+    </author>
+        
+    <preference name="orientation" value="landscape" />
+     
+    <icon src="logo.png" gap:platform="winphone" />
+    <icon src="logo.png" gap:platform="winphone" gap:role="background" />
+    <gap:splash src="splashscreen.png" gap:platform="winphone" />
+        
+</widget>

@@ -1,0 +1,38 @@
+      html, body { 
+        height: 100%; width: 100%; margin: 0; padding: 0; 
+      } 
+      body{
+        background-color:white; overflow:hidden; font-family: "Trebuchet MS"; 
+      }
+      #header {
+        border:solid 2px cornflowerblue;
+        padding:10px;
+        color:peru;
+        margin: 5px;
+      }
+      .roundedCorners{
+        border-radius: 10px;
+        box-shadow: 4px 4px 8px #adadad;
+      }
+      #optional {
+        border:solid 2px peru;
+        padding:5px;
+        border-radius: 10px;
+      }
+      #mainheader {
+        font-size:24pt;
+        font-weight:bold;
+      }
+      #subheader {
+        font-size:10pt;
+        padding-left:20px;
+      }
+      #mainContent {
+        background-color:white;
+        padding:5px;
+        border:solid 2px cornflowerblue;
+        margin:5px;
+      }
+      #convertButton {
+        font-size:24pt;
+      }

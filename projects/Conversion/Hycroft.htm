@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hycroft Mine Grid</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+
+        <!--bootstrap-->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+        <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+
+        <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />-->
+        <link href="css/alt.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="img/icon/favicon.ico">
+        <script src="http://code.jquery.com/jquery-2.0.0.js"></script>
+        <script src=http://code.jquery.com/ui/1.10.3/jquery-ui.js></script>
+
+    </head>
+    <body>
+        <header>
+            <h2 class="text-center">Hycroft Mine Grid Coordinate Conversion </h2>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="row">
+                        <div class="span7">
+
+                            <form action="convert.htm" class="" method="get">
+                                <h4 class="text-center">Input:</h4>
+                                <select id="InputGridSystem" class="gridDrop" onchange="inputGridDD()">
+                                    <option value="null">Select Input Parameters</option>
+                                    <option value="HCRFT">Hycroft Mine Grid</option>
+                                    <option value="NAD83_M11">NAD 83 UTM  Zone 11 Meters</option>
+                                    <option value="NAD83_FT11">NAD 83 UTM  Zone 11 Feet</option>
+                                </select> 
+
+                                <fieldset> 
+                                    <div class="contentIn">                                   
+                                        <dl class="dl-horizontal">
+                                            <dt class="dirText">Easting:</dt>
+                                            <dd><input id="xInput"/></dd>
+                                            <dt class="dirText">Northing:</dt>
+                                            <dd><input id="yInput"/></dd>
+                                        </dl>
+                                    </div>
+                                </fieldset>
+
+                                <!--                            <h4 class="text-center">Message:</h4>-->
+                                <div id="message">
+                                    <div class="alert alert-error" id="selectCS">
+                                        <strong>Remember:</strong> Please choose conversion parameter!
+                                    </div>
+                                    <div class="alert alert-info" id="noConvert">
+                                        <strong>FYI:</strong> You did not convert anything, select new parameters to continue.
+                                    </div>
+                                </div>
+
+                                <h4 class="text-center">Output:</h4>
+                                <select id="OutputGridSystem" class="gridDrop" onchange="outputGridDD()">
+                                    <option value="null">Select Output Parameters</option>
+                                    <option value="HCRFT">Hycroft Mine Grid</option>
+                                    <option value="NAD83_M11">NAD 83 UTM  Zone 11 Meters</option>
+                                    <option value="NAD83_FT11">NAD 83 UTM  Zone 11 Feet</option>
+                                </select> 
+
+                                <fieldset>
+                                    <div class="contentOut">
+                                        <dl class="dl-horizontal">
+                                            <dt class="dirText">Easting:</dt>
+                                            <dd><label id="xOutput"></label></dd>
+                                            <dt class="dirText">Northing:</dt>
+                                            <dd><label id="yOutput"></label></dd>
+                                        </dl>
+                                    </div>
+                                </fieldset>
+                                <input id="convertButton" type="button" onclick="toHycroftMG()" value="CONVERT"/>
+                            </form>
+
+                        </div>
+                        <!--Notes-->
+                        <div class="span5">
+                            <h4 class="text-center">Explanation:</h4>
+                            <div class="alert" id="notes">
+                                <strong>Usage:</strong>
+                                <ul>
+                                    <li>'Select Input Parameters' from the drop down menu</li>
+                                    <li>Input the coordinates in the Input fields</li>
+                                    <li>'Select Output Parameters' from the drop down menu</li>
+                                    <li>Click 'CONVERT'</li>
+                                </ul>
+
+                                <strong>Note:</strong><br> Input does <strong>not</strong> take:
+                                <ul>
+                                    <li>Commas ( , )</li>
+                                    <li>Fractions ( 1/4 )</li>
+                                    <li>Unit Symbols ( " )( ' )</li>
+                                    <li>Degree ( &deg; ) </li>
+                                </ul>
+                                <p>Units are specified by the conversion paremeters.</p>
+                                <p>More fucntionality to come. Please request any changes or improvements to the work flow by <a href="mailto:bradhellyar@gmail.com">contacting</a> me.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script> 
+
+            $('#selectCS').hide();
+            $('#noConvert').hide();
+
+            var inputGrid;
+            var outputGrid;
+
+            //set conversion input coordiante system
+            function inputGridDD(){
+                inputGrid = document.getElementById('InputGridSystem').value;
+                //anaimate colors back to default
+                $('#InputGridSystem').animate({
+                    backgroundColor: "#fff",
+                    color: "black",
+                }, 100);
+                $('#selectCS').fadeOut('swing');
+                //Change output label text
+                switch (inputGrid){
+                    case 'NAD83_FT11': //NAD83 FT -> Hycroft Mine Grid 
+                        document.getElementById('inputText').innerHTML = "UTM NAD 83 Zone 11 Feet";
+                        break;
+                    case 'NAD83_M11': //NAD83 Meter -> Feet -> Hycroft Mine Grid
+                        document.getElementById('inputText').innerHTML = "UTM NAD 83 Zone 11 Meters";
+                        break;
+                    case 'HCRFT': //Hycroft Mine Gride -> NAD 83 FT
+                        document.getElementById('inputText').innerHTML = "Hycroft Mine Grid";
+                        break;
+                }
+            } 
+            //set conversion output coordiante system
+            function outputGridDD(){
+                outputGrid = document.getElementById('OutputGridSystem').value;
+                //anaimate colors back to default
+                $('#OutputGridSystem').animate({
+                    backgroundColor: "#fff",
+                    color: "black",
+                }, 100);
+                //            $('#selectCS').fadeOut('swing');
+                //Change output label text
+                switch (outputGrid){
+                    case 'NAD83_FT11': //NAD83 FT -> Hycroft Mine Grid 
+                        document.getElementById('outputText').innerHTML = "UTM NAD 83 Zone 11 Feet";
+                        break;
+                    case 'NAD83_M11': //NAD83 Meter -> Feet -> Hycroft Mine Grid
+                        document.getElementById('outputText').innerHTML = "UTM NAD 83 Zone 11 Meters";
+                        break;
+                    case 'HCRFT': //Hycroft Mine Gride -> NAD 83 FT
+                        document.getElementById('outputText').innerHTML = "Hycroft Mine Grid";
+                        break;
+                }
+            } 
+
+            function toHycroftMG(){
+
+                //Clear warnings
+                $('#selectCS').hide();
+                $('#noConvert').hide();
+                $('#OutputGridSystem, #InputGridSystem').animate({
+                    backgroundColor: "#fff",
+                    color: "black",},100);
+
+                var xFT, yFT;
+                var xIn, yIn, xOut, yOut;
+                var xROut, yROut;
+                var mToFeet = 3.28216699475066;
+                var ftToMeters = 0.304676758251287;
+                var rotation = 16.8990017355602;
+                var sin = .290685522989831;
+                var cos = .956818648817073;
+                var orginX = 348380.427674211;
+                var orginY = 4514698.44239036;            
+                var mgEast = 0.956818648817073;
+                var mgNorth = 0.290685522989831;
+
+                xIn = document.getElementById('xInput');
+                yIn = document.getElementById('yInput');
+
+                //Calculations
+                switch (inputGrid){
+                    case 'NAD83_FT11':
+                        xFT = xIn.value;
+                        yFT = yIn.value;
+                        break;
+                    case 'NAD83_M11':
+                        xFT = (xIn.value - orginX) * mToFeet;
+                        yFT = (yIn.value - orginY) * mToFeet;
+                        break;
+                    case 'HCRFT':
+                        xFT = mgEast/(1/xIn.value) - yIn.value/(1/-mgNorth);
+                        yFT = mgEast/(1/yIn.value) - xIn.value/(1/mgNorth);
+                        break;
+                    default:
+                        $('#selectCS').fadeIn('swing');
+                        $('#spaceToHide').hide();
+                        $('#InputGridSystem').animate({ 
+                            backgroundColor: "#f2dede",
+                            color: "#b94a48",
+                        }, 100);
+                }
+
+                switch (outputGrid){
+                    case 'NAD83_FT11':
+                        xOut = xFT * 1;
+                        yOut = yFT * 1;
+                        //alert('NAD83_FT11');
+                        break;
+                    case 'NAD83_M11':
+                        xOut = (xFT * ftToMeters) + orginX;
+                        yOut = (yFT * ftToMeters) + orginY;
+                        //alert('NAD83_M11');
+                        break;
+                    case 'HCRFT':
+                        xOut = yFT * -sin + xFT * cos;
+                        yOut = yFT * cos + xFT * sin;
+                        //alert('HCRFT');
+                        break;    
+                    default:
+                        $('#selectCS').fadeIn('swing');
+                        $('#OutputGridSystem').animate({ 
+                            backgroundColor: "#f2dede",
+                            color: "#b94a48",
+                        }, 100);
+                }
+
+                xROut = xOut.toFixed(2);
+                yROut = yOut.toFixed(2);
+
+                var xScreen = xROut.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                var yScreen = yROut.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+
+                document.getElementById('xOutput').innerHTML = xScreen;
+                document.getElementById('yOutput').innerHTML = yScreen;
+
+                //Display info that no conversion is happening
+                if (inputGrid == outputGrid){
+                    $('#noConvert').fadeIn('swing');
+                    $('#OutputGridSystem, #InputGridSystem').animate({ 
+                        backgroundColor: "#d9edf7",
+                        color: "#3a87ad",
+                    }, 100);
+                }
+            }
+
+        </script>
+    </body>
+</html>

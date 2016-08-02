@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Codetastic</title>
+	<script src="js/js_quicktags.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="coder.css" type="text/css" media="screen">
+    <!-- codemirror -->
+    <script src="lib/codemirror.js"></script>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="mode/javascript/javascript.js"></script>
+    <script src="mode/css/css.js"></script>
+    <script src="mode/htmlmixed/htmlmixed.js"></script>
+    <script src="mode/vbscript/vbscript.js"></script>
+    <script src="mode/xml/xml.js"></script>
+    <script src="addon/closetag.js"></script>
+    <script src="addon/hint/javascript-hint.js"></script>
+    <script src="addon/hint/html-hint.js"></script>
+    <script src="addon/hint/show-hint.js"></script>
+    <script src="addon/hint/xml-hint.js"></script>
+    <link rel="stylesheet" href="addon/hint/show-hint.css">
+    <!--themes -->
+    <link rel="stylesheet" href="theme/neat.css">
+    <link rel="stylesheet" href="theme/elegant.css">
+    <link rel="stylesheet" href="theme/erlang-dark.css">
+    <link rel="stylesheet" href="theme/night.css">
+    <link rel="stylesheet" href="theme/monokai.css">
+    <link rel="stylesheet" href="theme/cobalt.css">
+    <link rel="stylesheet" href="theme/eclipse.css">
+    <link rel="stylesheet" href="theme/rubyblue.css">
+    <link rel="stylesheet" href="theme/lesser-dark.css">
+    <link rel="stylesheet" href="theme/xq-dark.css">
+    <link rel="stylesheet" href="theme/xq-light.css">
+    <link rel="stylesheet" href="theme/ambiance.css">
+    <link rel="stylesheet" href="theme/ambiance-mobile.css">
+    <link rel="stylesheet" href="theme/blackboard.css">
+    <link rel="stylesheet" href="theme/vibrant-ink.css">
+    <link rel="stylesheet" href="theme/solarized.css">
+    <link rel="stylesheet" href="theme/twilight.css">
+    <link rel="stylesheet" href="theme/midnight.css">
+    
+    <style>
+        .CodeMirror {
+            border: none;
+            height: 100%;
+            position:fixed;
+            width:50%;
+        }
+        .CodeMirror-scroll {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="codeInput">
+    <textarea id="code" name="code">
+<!doctype html>
+<html>
+    <head>
+    <meta charset=utf-8>
+    <title>HTML5 canvas demo</title>
+    <style>p {font-family: monospace;}</style>
+</head>
+<body>
+    <p>Canvas pane goes here:</p>
+    <canvas id=pane width=300 height=200></canvas>
+    <script>
+        var canvas = document.getElementById('pane');
+        var context = canvas.getContext('2d');
+                
+        context.fillStyle = 'rgb(250,0,0)';
+        context.fillRect(10, 10, 55, 50);
+                
+        context.fillStyle = 'rgba(0, 0, 250, 0.5)';
+        context.fillRect(30, 30, 55, 50);
+    </script>
+</body>
+</html>  
+    </textarea>
+    </div>
+    
+    <iframe id=preview></iframe>
+
+    <script>
+      var delay;
+      // Initialize CodeMirror editor with a nice html5 canvas
+      var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+        mode: 'text/html',
+        viewportMargin: Infinity,
+        tabMode: 'indent',
+        lineNumbers: true,
+        autoCloseTags: true,
+        lineWrapping: true,
+        extraKeys: {"Ctrl-Space": "autocomplete"}
+      });
+      editor.on("change", function() {
+        clearTimeout(delay);
+        delay = setTimeout(updatePreview, 300);
+      });
+      
+      function updatePreview() {
+        var previewFrame = document.getElementById('preview');
+        var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
+        preview.open();
+        preview.write(editor.getValue());
+        preview.close();
+      }
+      setTimeout(updatePreview, 300);
+    
+      CodeMirror.commands.autocomplete = function(cm) {
+        CodeMirror.showHint(cm, CodeMirror.htmlHint);
+        CodeMirror.showHint(cm, CodeMirror.javascriptHint);
+      }
+        
+    </script>
+</body>
+</html>

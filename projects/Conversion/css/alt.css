@@ -1,0 +1,170 @@
+body {
+    background-color:rgba(159, 91, 23, 0.9);
+    height: 100%;
+    background-image:URL("/img/Topo_BG_Orange.svg");
+    background-size:2600px;
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
+}
+
+#xInput, #yInput, #xOutput, #yOutput {
+    width:98.0%;
+    height: 25px;
+    background-color:#fff;
+    border:none;
+    cursor:text;
+    font-weight:900;
+    margin-bottom:10px;
+    padding-left:5px;
+    line-height:26px;
+    color: rgb(159, 91, 23);
+}
+form {
+    width:350px;
+    padding:10px;
+    margin:auto;
+}
+
+.dl-horizontal dt {
+    width: 70px;
+    line-height:30px;
+}
+
+.dl-horizontal dd {
+  margin-left: 80px;
+}
+
+label {
+    float:left;
+}
+
+.dirText {
+    font-weight:900;
+    line-height:20px;
+}
+
+.gridDrop {
+    position:relative;
+    width:100%;
+    border-radius:0px;
+    background-color:#fff;
+    border:none;
+    cursor:text;
+    font-weight:900;
+    color: rgb(159, 91, 23);
+}
+
+#inputText, #outputText {
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:10px;
+    line-height:30px;
+} 
+#convertButton {
+    color: #fff;
+    background-color: rgb(106, 145, 59);
+    border:none;
+    width:100%;
+    height: 30px;
+    font-size:15px;
+    font-weight:700;
+}
+#convertButton:hover {
+    background-color: rgb(130, 180, 72);
+}
+
+#notes {
+    text-shadow: none;
+    border: none;
+    margin-right:20px;
+    margin-bottom:20px;
+    background: #fff;
+    color: rgb(159, 91, 23);
+}
+.span5 {
+    margin-top: 10px;
+}
+.span12 {
+/*    background-color: rgba(255, 255, 255, 0.63);*/
+    height: 100%;
+}
+header {
+    margin-top:-10px;
+    background-color: rgba(255, 255, 255, 0.63);
+    color: rgb(159, 91, 23);
+}
+
+.alert {
+    border-radius:0;
+    margin-bottom:0px;
+}
+
+#message {
+    height:60px;
+}
+
+@media (max-width: 767px) {
+    body {
+    }
+
+    .span12 {
+        position:relative;
+        top:-10px;
+    }
+    
+    h2 {
+        margin-bottom:0px;
+        padding:0px;
+    }
+    .dl-horizontal dt {
+        width: 70px;
+        line-height:30px;
+        float:left;
+    }
+    .dl-horizontal dd {
+        margin-left: 80px;
+       
+    }
+    form {
+        width:90%;
+        margin:20px;
+    }
+    #notes {
+        margin:20px;
+    }
+
+}
+@media (max-width: 480px) {
+    body {
+        margin:0px;
+        padding:0px;
+        padding-top:0px;
+    }
+    #xInput, #yInput, #xOutput, #yOutput {
+        width:98%;
+    }
+    form {
+        width:90%;
+        padding:0px;
+        padding-top:0px;
+        padding-bottom:0px;
+        margin:20px;
+    }
+    .dl-horizontal dd {
+        margin-left: 0px;
+    }
+    #xInput, #yInput, #xOutput, #yOutput {
+        margin-bottom:0px;
+    }
+    #inputText, #outputText {
+        margin-bottom:0px;
+    }
+    .contentIn {
+      margin-bottom:20px;  
+    }
+    #convertButton {
+        margin-top:10px;
+        width:100%;    
+    }
+}

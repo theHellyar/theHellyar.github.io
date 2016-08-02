@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hycroft Mine Grid</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+
+<!--bootstrap-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+
+<!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />-->
+<link href="css/alt.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="img/icon/favicon.ico">
+<script src="http://code.jquery.com/jquery-2.0.0.js"></script>
+<script src=http://code.jquery.com/ui/1.10.3/jquery-ui.js></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h2 class="text-center">Hycroft Mine Grid <br/>Coordinate Conversion </h2>
+                <div class="row">
+                    <div class="span7">
+                    
+                         <form action="convert.htm" class="" method="get">
+                            <select id="InputGridSystem" class="gridDrop" onchange="inputGridDD()">
+                                <option value="null">Select Conversion Parameters</option>
+                                <option value="NAD83_M11">NAD 83 UTM  Zone 11 Meters -> Hycroft Mine Grid</option>
+                                <option value="NAD83_FT11">NAD 83 UTM  Zone 11 Feet -> Hycroft Mine Grid</option>
+                                <option value="HCRFT_FT11">Hycroft Mine Grid -> NAD 83 UTM  Zone 11 Feet</option>
+                                <option value="HCRFT_M11">Hycroft Mine Grid -> NAD 83 UTM  Zone 11 Meters</option>
+                            </select> 
+                            
+                            <fieldset> 
+                                <div class="contentIn">                                   
+                                    <div class="dl-horizontal">
+                                        <dt class="dirText">Input:</dt>
+                                        <dd id="inputText">UTM NAD 83 Zone 11 Meters</dd>
+                                        <dt class="dirText">Easting:</dt>
+                                        <dd><input id="xInput"/></dd>
+                                        <dt class="dirText">Northing:</dt>
+                                        <dd><input id="yInput"/></dd>
+                                    </div>
+                                </div>
+                            </fieldset>
+                          
+                            <div class="alert alert-error" id="selectCS">
+                              <button type="button" class="close" data-dismiss="alert">&times;</button>
+                              <strong>Remember!</strong> Please select conversion paremteters from above!
+                            </div>
+                
+                            <fieldset>
+                                <div class="contentOut">
+                                    <div class="dl-horizontal">
+                                        <dt class="dirText" id="legendOut">Output:</dt>
+                                        <dd class="" id="outputText">Hycroft Mine Grid</dd>
+                                        <dt class="dirText">Easting:</dt>
+                                        <dd><label id="xOutput"/></dd>
+                                        <dt class="dirText">Northing:</dt>
+                                        <dd><label id="yOutput"/></dd>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <input class="" id="convertButton" type="button" onclick="toHycroftMG()" value="CONVERT"/>
+                        </form>
+
+                    </div>
+                <!--Notes-->
+                <div class="span5">
+                    <div class="alert alert-info" id="notes">
+                        <strong>Usage:</strong><p>'Select Conversion Parameters' from the drop down menu. Or input the coordinates in the 'Input' fields then 'Select Conversion Parameters' and click 'CONVERT' </p>
+                        <strong>Note:</strong><br> Input does <strong>not</strong> take:
+                        <ul>
+                            <li>Commas ( , )</li>
+                            <li>Fractions ( 1/4 )</li>
+                            <li>Unit Sysmbols ( " )( ' )</li>
+                            <li>Degree ( &deg; ) </li>
+                        </ul>
+                        <p>All units are specified by the conversion paremeters.</p>
+                        <p>More fucntionality to come. Please request any changes or improvements to the work flow by <a href="mailto:bradhellyar@gmail.com">contacting</a> me.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script> 
+        
+        $('#selectCS').hide();
+        
+        var inputGrid;
+        
+        //set conversion type
+        function inputGridDD(){
+            inputGrid = document.getElementById('InputGridSystem').value;
+            //anaimate colors back to default
+            $('#InputGridSystem').animate({
+                backgroundColor: "#fff",
+                color: "black",
+            }, 1500);
+            $('#selectCS').fadeOut('swing');
+            //Change output label text
+            switch (inputGrid){
+                case 'NAD83_FT11': //NAD83 FT -> Hycroft Mine Grid 
+                    document.getElementById('inputText').innerHTML = "UTM NAD 83 Zone 11 Feet";
+                    document.getElementById('outputText').innerHTML = "Hycroft Mine Grid";
+                    break;
+                case 'NAD83_M11': //NAD83 Meter -> Feet -> Hycroft Mine Grid
+                    document.getElementById('inputText').innerHTML = "UTM NAD 83 Zone 11 Meters";
+                    document.getElementById('outputText').innerHTML = "Hycroft Mine Grid";
+                    break;
+                case 'HCRFT_FT11': //Hycroft Mine Gride -> NAD 83 FT
+                    document.getElementById('inputText').innerHTML = "Hycroft Mine Grid";
+                    document.getElementById('outputText').innerHTML = "UTM NAD 83 Zone 11 Feet";
+                    break;
+                case 'HCRFT_M11'://Hycroft Mine Gride -> NAD 83 Meter
+                    document.getElementById('inputText').innerHTML = "Hycroft Mine Grid";
+                    document.getElementById('outputText').innerHTML = "UTM NAD 83 Zone 11 Meters";
+                    break;
+            }
+            //alert("you chose " + inputGrid);
+        } 
+        
+        function toHycroftMG(){
+            
+            $('#selectCS').hide();
+            
+            var xIn, yIn, xOut, yOut, xM2F, yM2F;
+            var xROut, yROut
+            var mToFeet = 3.28216699475066;
+            var ftToMeters = 0.304676758251287;
+            var rotation = 16.8990017355602;
+            var sin = .290685522989831;
+            var cos = .956818648817073;
+            var orginX = 348380.427674211;
+            var orginY = 4514698.44239036;
+            
+            var xMGFT, yMGFT;
+            var mgEast = 0.956818648817073;
+            var mgNorth = 0.290685522989831;
+            
+            xIn = document.getElementById('xInput');
+            yIn = document.getElementById('yInput');
+
+            //Calculations
+            switch (inputGrid){
+                case 'NAD83_FT11':  //NAD83 FT -> Hycroft Mine Grid  
+                    xOut = yIn.value * -sin + xIn.value * cos;
+                    yOut = yIn.value * cos + xIn.value * sin;
+                    break;
+                case 'NAD83_M11': //Nad83 Meter -> Feet -> Hycroft Mine Grid  
+                    //alert('Meters 2 Feet');
+                    xM2F = (xIn.value - orginX) * mToFeet;
+                    yM2F = (yIn.value - orginY) * mToFeet;
+                    xOut = yM2F * -sin + xM2F * cos;
+                    yOut = yM2F * cos + xM2F * sin;
+                    break;
+                case 'HCRFT_FT11': //Hycroft Mine Gride -> NAD 83 FT
+                    //alert("HCRFT_FT11"); 
+                    xMGFT = mgEast/(1/xIn.value) - yIn.value/(1/-mgNorth);
+                    yMGFT = mgEast/(1/yIn.value) - xIn.value/(1/mgNorth);
+                    xOut = xMGFT;
+                    yOut = yMGFT;
+                    break;
+                case 'HCRFT_M11'://Hycroft Mine Gride -> NAD 83 Meters
+                    xMGFT = mgEast/(1/xIn.value) - yIn.value/(1/-mgNorth);
+                    yMGFT = mgEast/(1/yIn.value) - xIn.value/(1/mgNorth);
+                    xMGM = (xMGFT * ftToMeters) + orginX;
+                    yMGM = (yMGFT * ftToMeters) + orginY; 
+                    xOut = xMGM;
+                    yOut = yMGM;
+                    break; 
+                default:
+                    $('#selectCS').fadeIn('swing');
+                    $('#InputGridSystem').animate({
+//                        borderWidth: "2px", 
+                        backgroundColor: "#f2dede",
+                        color: "#b94a48",
+//                        marginTop: "0.03in"
+                    }, 1500);
+//                    $('#InputGridSystem').css('background-color','rgba(186, 54, 54, 0.92)');
+//                    $('#InputGridSystem').css('color','#fff');
+                    
+//                    alert("Please select an input grid system.");
+            }
+            
+            xROut = xOut.toFixed(2);
+            yROut = yOut.toFixed(2);
+            
+            var xScreen = xROut.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+            var yScreen = yROut.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+            
+            document.getElementById('xOutput').innerHTML = xScreen;
+            document.getElementById('yOutput').innerHTML = yScreen;
+        }
+        
+    </script>
+</body>
+</html>
